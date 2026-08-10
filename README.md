@@ -1,3 +1,4 @@
+
 # 🤖 AI Customer Feedback Analyzer & Slack Notification
 
 <p align="center">
@@ -21,93 +22,106 @@
 
 ## 📌 Project Overview
 
-The **AI Customer Feedback Analyzer & Slack Notification** is an automated workflow designed to transform unstructured customer feedback into actionable insights.
+The **AI Customer Feedback Analyzer & Slack Notification** is an AI-powered workflow automation designed to transform unstructured customer feedback into structured, actionable insights.
 
-Instead of manually reviewing every customer response, the workflow uses an AI model to analyze the feedback, classify its sentiment, identify the primary topic, generate a concise summary, and explain the classification.
+The workflow automatically analyzes customer feedback, determines the sentiment, identifies the primary topic, generates a concise summary, and provides a reason for the classification.
 
-The analyzed result is then automatically delivered to a designated **Slack channel**, allowing teams to monitor customer sentiment and identify potential issues in real time.
+The results are then automatically delivered to **Slack**, allowing teams to monitor customer feedback and identify potential issues without manually reviewing every response.
+
+---
+
+## 🎥 Demo
+
+<p align="center">
+  <strong>AI Customer Feedback Analysis & Slack Notification</strong>
+</p>
+
+https://github.com/belioautomation/AI-Customer-Feedback-Analyzer-Slack-Notification/raw/refs/heads/main/demo.mp4
+
+**Workflow:**  
+`Customer Feedback → Zapier → AI Analysis → Sentiment Classification → Slack`
+
+The demo showcases the complete automation, including customer feedback analysis, sentiment classification, and automated Slack notification.
 
 ---
 
 ## 🎯 Problem
 
-Businesses can receive large amounts of customer feedback through forms, surveys, and other channels.
+Businesses can receive a large volume of customer feedback through surveys, forms, and other channels.
 
 Manually reviewing every response can be:
 
 - ⏱️ Time-consuming
 - 🔁 Repetitive
 - 📊 Difficult to scale
-- ⚠️ Prone to inconsistent classification
+- ⚠️ Inconsistent
 - 🚨 Slow when identifying negative feedback
 
 ### Solution
 
-This automation introduces an AI-powered processing layer that automatically analyzes incoming feedback and delivers structured insights directly to the team.
+This automation introduces an AI-powered analysis layer that automatically processes customer feedback and delivers structured insights directly to the team through Slack.
 
 ---
 
 ## 🔄 Workflow Architecture
 
 ```text
-┌─────────────────────┐
-│  Customer Feedback  │
-│   Form / Survey     │
-└──────────┬──────────┘
+┌──────────────────────┐
+│  Customer Feedback   │
+│    Form / Survey     │
+└──────────┬───────────┘
            │
            ▼
-┌─────────────────────┐
-│       Zapier        │
-│      Trigger        │
-└──────────┬──────────┘
+┌──────────────────────┐
+│        Zapier        │
+│       Trigger        │
+└──────────┬───────────┘
            │
            ▼
-┌─────────────────────┐
-│      AI / LLM       │
-│  Feedback Analysis  │
-└──────────┬──────────┘
+┌──────────────────────┐
+│       AI / LLM       │
+│  Feedback Analysis   │
+└──────────┬───────────┘
            │
            ▼
-┌─────────────────────┐
-│ Sentiment & Topic   │
-│    Classification   │
-└──────────┬──────────┘
+┌──────────────────────┐
+│ Sentiment & Topic    │
+│    Classification    │
+└──────────┬───────────┘
            │
            ▼
-┌─────────────────────┐
-│ Structured Results  │
-│ Summary + Reason    │
-└──────────┬──────────┘
+┌──────────────────────┐
+│   Structured Output  │
+│   Summary + Reason   │
+└──────────┬───────────┘
            │
            ▼
-┌─────────────────────┐
-│        Slack        │
-│ Team Notification   │
-└─────────────────────┘
+┌──────────────────────┐
+│        Slack         │
+│  Team Notification   │
+└──────────────────────┘
 ````
 
 ---
 
 ## ✨ Key Features
 
-### 🧠 AI-Powered Sentiment Analysis
+### 🧠 AI-Powered Feedback Classification
 
-Automatically classifies customer feedback into six categories:
+The AI classifies customer feedback into six categories:
 
-| Classification    | Description                                               |
-| ----------------- | --------------------------------------------------------- |
-| 🟢 **POSITIVE**   | Customer expresses satisfaction or praise                 |
-| 🔴 **NEGATIVE**   | Customer reports dissatisfaction, problems, or complaints |
-| 🟡 **MIXED**      | Customer expresses both positive and negative opinions    |
-| ⚪ **NEUTRAL**     | Feedback is factual or does not express clear sentiment   |
-| 🔵 **SUGGESTION** | Customer recommends an improvement or feature             |
-| ❓ **QUESTION**    | Customer is primarily asking a question                   |
+| Classification    | Description                                                      |
+| ----------------- | ---------------------------------------------------------------- |
+| 🟢 **POSITIVE**   | Customer expresses satisfaction or praise                        |
+| 🔴 **NEGATIVE**   | Customer reports dissatisfaction, problems, or complaints        |
+| 🟡 **MIXED**      | Customer expresses both positive and negative opinions           |
+| ⚪ **NEUTRAL**     | Feedback does not express a clear positive or negative sentiment |
+| 🔵 **SUGGESTION** | Customer recommends an improvement or new feature                |
+| ❓ **QUESTION**    | Customer is primarily asking a question                          |
 
-### 🏷️ Topic Detection
+### 🏷️ Topic Identification
 
-The AI identifies the primary subject of the feedback.
-
-Examples:
+The AI identifies the primary topic of the feedback, such as:
 
 * App Performance
 * User Experience
@@ -119,19 +133,19 @@ Examples:
 
 ### 📝 Automatic Summarization
 
-Long customer responses are converted into concise summaries that are easier for teams to review.
+Customer responses are converted into concise summaries that allow teams to quickly understand the issue or opinion.
 
-### 💡 Classification Reasoning
+### 💡 Classification Reason
 
-The workflow also generates a short explanation describing why the feedback received its classification.
+The AI provides a short explanation for why the feedback was assigned to a particular category.
 
-### 🔔 Real-Time Slack Notifications
+### 🔔 Slack Notifications
 
-Analyzed feedback is automatically sent to Slack so teams can respond quickly.
+The analyzed feedback is automatically sent to Slack for real-time team visibility.
 
 ---
 
-## 🧠 AI Output Structure
+## 🧠 AI Output
 
 The AI is instructed to return structured JSON:
 
@@ -144,13 +158,13 @@ The AI is instructed to return structured JSON:
 }
 ```
 
-This structured approach makes the AI output easier to map into downstream automation steps.
+Structured output makes the AI response easier to process and map into subsequent automation steps.
 
 ---
 
 ## 💬 Slack Notification Example
 
-The final Slack notification follows a format similar to:
+Example notification sent to the team:
 
 ```text
 📊 NEW CUSTOMER FEEDBACK
@@ -172,51 +186,51 @@ The customer is dissatisfied because of a recurring technical issue.
 
 ## 🛠️ Technology Stack
 
-| Technology        | Role                                 |
-| ----------------- | ------------------------------------ |
-| **Zapier**        | Workflow orchestration               |
-| **AI / LLM**      | Feedback analysis and classification |
-| **Slack**         | Real-time team notifications         |
-| **Google Sheets** | Feedback data source/storage         |
+| Technology        | Purpose                               |
+| ----------------- | ------------------------------------- |
+| **Zapier**        | Workflow automation and orchestration |
+| **AI / LLM**      | Feedback analysis and classification  |
+| **Slack**         | Real-time team notifications          |
+| **Google Sheets** | Feedback data source and storage      |
 
 ---
 
-## ⚙️ Workflow Steps
+## ⚙️ Workflow Process
 
-### 01 — Capture Customer Feedback
+### 1. Collect Feedback
 
 A customer submits feedback through the configured form or survey.
 
-### 02 — Trigger Automation
+### 2. Trigger Zapier
 
-Zapier detects the new response and starts the workflow.
+Zapier detects the new response and starts the automation.
 
-### 03 — Send Feedback to AI
+### 3. Analyze with AI
 
-The customer's response is passed to the AI model with a structured analysis prompt.
+The customer feedback is passed to an AI model using a structured analysis prompt.
 
-### 04 — Classify Feedback
+### 4. Classify Feedback
 
-The AI determines the sentiment and identifies the primary topic.
-
-### 05 — Generate Insights
-
-The AI produces:
+The AI determines:
 
 * Sentiment
 * Topic
 * Summary
 * Reason
 
-### 06 — Notify the Team
+### 5. Process the Result
 
-Zapier sends the processed result to the configured Slack channel.
+The structured AI response is mapped into the required fields.
+
+### 6. Notify Slack
+
+Zapier sends the analyzed feedback to the configured Slack channel.
 
 ---
 
 ## 📈 Business Value
 
-This automation can help organizations:
+This automation can help businesses:
 
 ### Reduce Manual Work
 
@@ -224,56 +238,36 @@ Automates the initial review and categorization of customer feedback.
 
 ### Improve Response Time
 
-Negative or important feedback can reach the appropriate team immediately.
+Important or negative feedback can be surfaced to teams immediately.
 
 ### Identify Recurring Issues
 
-Topic classification makes it easier to discover common customer problems.
+Topic classification helps identify common customer problems and trends.
 
 ### Scale Feedback Processing
 
-AI can analyze large volumes of feedback without requiring every response to be manually reviewed.
+AI allows businesses to process larger volumes of feedback without manually reviewing every response.
 
-### Create Actionable Insights
+### Turn Feedback Into Actionable Insights
 
-Raw customer comments are transformed into structured information that teams can act on.
+Unstructured customer comments are transformed into structured information that teams can use for decision-making.
 
 ---
 
-## 🚀 Potential Enhancements
+## 🚀 Potential Improvements
 
-Future versions could extend the workflow with:
+Future versions could include:
 
-* 🔴 Automatic escalation of high-priority complaints
+* 🔴 Automatic escalation of critical complaints
 * 🎫 Automatic support ticket creation
-* 📧 Email alerts for critical feedback
-* 📊 Sentiment dashboards
-* 📈 Weekly/monthly sentiment reports
+* 📧 Email notifications for high-priority feedback
+* 📊 Customer sentiment dashboards
+* 📈 Weekly or monthly sentiment reports
 * 🗂️ CRM integration
 * 🧠 Historical sentiment tracking
-* 🏷️ Automatic priority classification
-* 🔄 Product-management integration for feature requests
-
-### Advanced Workflow
-
-```text
-Customer Feedback
-       │
-       ▼
-    AI Analysis
-       │
-       ▼
-  Sentiment Router
-   ┌───┼────┬────┐
-   ▼   ▼    ▼    ▼
-Positive Mixed Negative Suggestion
-   │   │    │       │
-   ▼   ▼    ▼       ▼
- Slack Slack Alert  Product
-              │     Team
-              ▼
-        Support Team
-```
+* 🏷️ Automatic priority scoring
+* 🔄 Product-management integration
+* 🤖 Automated response suggestions
 
 ---
 
@@ -283,34 +277,32 @@ This project is intended for portfolio and demonstration purposes.
 
 > **Never commit API keys, authentication tokens, credentials, or private customer information to a public repository.**
 
-Sensitive information should be stored using Zapier's secure connection system or appropriate secret management solutions.
+Sensitive credentials should be managed through Zapier's secure authentication system or an appropriate secrets-management solution.
 
 ---
 
 ## 📚 Skills Demonstrated
 
-This project demonstrates practical experience with:
-
-* AI workflow automation
+* AI Workflow Automation
 * Zapier
-* LLM integration
-* Prompt engineering
-* Sentiment analysis
-* Structured AI outputs
-* Workflow design
-* Slack integration
-* Data transformation
-* Business process automation
-* Customer feedback analysis
-* Automation architecture
+* LLM Integration
+* Prompt Engineering
+* Sentiment Analysis
+* Structured AI Output
+* Workflow Design
+* Slack Integration
+* Data Transformation
+* Business Process Automation
+* Customer Feedback Analysis
+* Automation Architecture
 
 ---
 
 ## 🎓 Project Purpose
 
-This project was built as part of my ongoing development in **AI Automation and Workflow Development**, with a focus on applying AI to practical business processes.
+This project was built as part of my ongoing development in **AI Automation and Workflow Development**.
 
-The goal is not simply to automate a task, but to design workflows that turn **unstructured information into actionable business insights**.
+The goal was to create a practical business automation that transforms **unstructured customer feedback into structured insights** and automatically delivers those insights to the appropriate team.
 
 ---
 
@@ -318,7 +310,7 @@ The goal is not simply to automate a task, but to design workflows that turn **u
 
 **Belio Sinangote**
 
-AI Automation & Workflow Developer
+**AI Automation & Workflow Developer**
 
 Interested in building practical solutions using:
 
@@ -330,5 +322,4 @@ Interested in building practical solutions using:
 
 This project is available for educational and portfolio purposes.
 
-```
-```
+````
